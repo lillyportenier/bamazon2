@@ -8,3 +8,5 @@
   <li>mySQL</li>
   <li>Inquirer</li>
 </ul>
+<h2>Customer Interface</h2>
+<p>The customer interface presents the user with a list of availabe products, along with the product ID, and price. The customer is then able to purchase the item by specifying the item ID and the quantity of product.</p>
