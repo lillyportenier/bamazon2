@@ -27,7 +27,13 @@ function productShow() {
   connection.query("SELECT * FROM products", function (err, result) {
     console.log("ID  Product  | Price  ");
     for (i = 0; i < result.length; i++) {
-      console.log(result[i].item_id + "    " + result[i].product_name + "  " + result[i].price);
+      var stuff = {
+        ID: result[i].item_id,
+        Name: result[i].product_name,
+        Department: result[i].department_name,
+        Price: result[i].price
+      }
+      console.log(stuff);
     }
     console.log(dashes);
     purchasePrompt();
@@ -90,10 +96,13 @@ function purcahseFunction(answer) {
             throw err;
           };
           console.log("Your total is $" + cost);
-          console.log("New stock: " + result[selectedItemID].stock_quantity)
+          console.log("New stock: " + newStock)
           keepShopping();
         });
-    }  
+    }  else {
+      console.log("You entered an amount that we don't have in stock, please try again with a lower amount!")
+      keepShopping()
+    }
   });
 };
 function keepShopping() {

@@ -10,10 +10,10 @@
 </ul>
 
 <h2>How To Use</h2>
-<p></p>
+<p>To use this application first you need to clone the reposity onto your device, once cloned run the command npm i in the command line, this should install mySQL and inquirer that are needed for each of the applications. You will also need to do one of two things; either open mySQL and insert data into your database or run the bamazonManager.js file and naviagte to the "add new product" option, this is prompt you to enter all of the necessar informtion for creating a new product.</p>
 
 <h2>Customer Interface</h2>
-<p>The customer interface presents the user with a list of availabe products, along with the product ID, and price. The customer is then able to purchase the item by specifying the item ID and the quantity of product.</p>
+<p>The customer interface presents the user with a list of availabe products, along with the product ID, and price. The customer is then able to purchase the item by specifying the item ID and the quantity of product. If there is not enough of the selected item then the user will be told they are unable to order that high of a number and to try again.</p>
 <img src= "img/bamazonCustomerInit.png">
 <img src="img/bamazonCustomer1.png">
 <img src="img/bamazonCustomer2.png">
