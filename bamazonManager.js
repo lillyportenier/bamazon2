@@ -66,13 +66,19 @@ function saleProducts() {
 function lowInventory() {
     console.log("got into low inventory");
     connection.query("SELECT * FROM products", function (err, result) {
-        var lowStock = [];
+        // var lowStock = [];
         for (i = 0; i < result.length; i++) {
             if (result[i].stock_quantity <= 5) {
-                lowStock.push(result[i].stock_quantity);
+                // lowStock.push(result[i].stock_quantity);
+                stuff = {
+                    Name: result[i].product_name,
+                    Department: result[i].department_name,
+                    Stock: result[i].stock_quantity
+                }
+                console.log(stuff);
             }
         }
-        console.log(lowStock);
+        // console.log(lowStock);
         manageraprompt()
 
     })
@@ -149,34 +155,16 @@ function addInventory() {
                     name: "name",
                     type: "input",
                     message: "What product would you like to add?",
-                    validate: function (value) {
-                        if (isNaN(value) === false) {
-                            return true;
-                        }
-                        return false;
-                    }
                 },
                 {
                     name: "department",
                     type: "input",
                     message: "What department is it in?",
-                    validate: function (value) {
-                        if (isNaN(value) === false) {
-                            return true;
-                        }
-                        return false;
-                    }
                 },
                 {
                     name: "price",
                     type: "input",
                     message: "What is the price of it?",
-                    validate: function (value) {
-                        if (isNaN(value) === false) {
-                            return true;
-                        }
-                        return false;
-                    }
                 },
                 {
                     name: "stock",
