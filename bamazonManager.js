@@ -117,15 +117,15 @@ function addInventory() {
             }
         ]).then(function (answer) {
             var selectedItem = (answer.id -1);
-            var newStock = (result[selectedItem].stock_quantity + answer.quantity);
+            var newStock = (+result[selectedItem].stock_quantity + +answer.quantity);
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
                         stock_quantity: newStock,
                     },
                     {
-                        item_id: parseFloat(result[selectedItem].item_id)
-                        // you need to fix thisbc it just adding number to end of surrent number instead of actually adding them together
+                        item_id: (result[selectedItem].item_id)
+                      
                     }
                 ], 
                 function (err) {
@@ -134,6 +134,7 @@ function addInventory() {
                         throw err;
                     };
                     console.log("your new stock for " + result[selectedItem].product_name + " is " + newStock) 
+                    manageraprompt()
                 }
             )
         })
