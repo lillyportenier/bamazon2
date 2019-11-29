@@ -93,7 +93,7 @@ function purcahseFunction(answer) {
           console.log("New stock: " + result[selectedItemID].stock_quantity)
           keepShopping();
         });
-    };
+    }  
   });
 };
 function keepShopping() {
